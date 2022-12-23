@@ -1,0 +1,32 @@
+{
+    "extends": [
+        "next/core-web-vitals",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@next/next/recommended",
+        "prettier" // "prettier"를 마지막에 추가합니다. 그러면 prettier와 충돌하는 eslint 규칙이 해제됩니다. 이것은 우리의 코드를 포맷하는 것이 아닙니다.
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+        // "ecmaVersion": 11
+    },
+    "plugins": ["@typescript-eslint"],
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "prettier/prettier": ["error", { "endOfLine": "auto" }, { "usePrettierrc": true }],
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "prefer-const": "error",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-explicit-any": "off", // any 를 사용 할 수 없어서 "error" 였던걸 "off" 로 바꿈
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    }
+}
